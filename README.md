@@ -1,29 +1,45 @@
-# Tourist Management System – A Travel Platform
+# Tourist Management System – Travel & DBMS Platform
 
-📌 Overview
-Tourist Management System is a web application built using PHP and MySQL to manage tour package bookings, user accounts, and payment records.
+A web-based **Tourist Management System** developed using **PHP and MySQL** to manage tour packages, user accounts, bookings, and payment records.
 
-It allows users to register, browse travel packages, and book tours online, while providing administrators with a dashboard to manage package offerings, user profiles, and payment histories.
+The system provides a simple platform for users to browse and purchase tour packages, while administrators can manage packages, registered users, and payment information through a dedicated admin panel.
 
-✨ Features
+---
 
-👤 User Features
-* User registration, login, and secure logout
-* Browse available travel packages with details and prices
-* Book and purchase tour packages
-* View booking and account information
+## 📌 Overview
 
-🛡️ Admin Features
-* Centralized administrator dashboard
-* Manage Packages: Add, edit, or delete tour packages
-* Manage Users: View and update registered user accounts
-* Payment History: Track user purchases and payment logs
+The **Tourist Management System** is a database-driven web application designed to demonstrate the practical implementation of **PHP, MySQL, and DBMS concepts** in a travel management environment.
 
-🏗️ Project Structure
+Users can create accounts, log in, explore available tour packages, and purchase packages. Administrators have access to a separate dashboard for managing tour packages, user accounts, and payment records.
 
+---
+
+## ✨ Features
+
+### 👤 User Features
+
+* User registration and login
+* Session-based authentication and logout
+* Browse available tour packages
+* View package details and prices
+* Purchase tour packages
+* Access account and booking information
+
+### 🛡️ Admin Features
+
+* Dedicated administrator dashboard
+* **Package Management** – Add, edit, and delete tour packages
+* **User Management** – View and manage registered users
+* **Payment History** – View and track user purchase records
+
+---
+
+## 🏗️ Project Structure
+
+```text
 Tourist-Management-System-main/
 │
-├── admin/                     # Admin dashboard & management scripts
+├── admin/                         # Admin dashboard and management scripts
 │   ├── dashboard.php
 │   ├── manage_packages.php
 │   ├── manage_packages_section.php
@@ -32,127 +48,220 @@ Tourist-Management-System-main/
 │   ├── payment_history_section.php
 │   └── update_user.php
 │
-├── images/                    # Project image assets
+├── images/                        # Project image assets
 │
-├── includes/                  # Database connection & shared components
+├── includes/                      # Database connection and shared components
 │   ├── db.php
 │   ├── footer.php
 │   ├── functions.php
 │   └── navbar.php
 │
-├── sql/                       # Database schema
+├── sql/                           # Database schema
 │   └── database.sql
 │
-├── index.php                  # Homepage
-├── login.php                  # User login page
-├── logout.php                 # User logout handler
-├── packages.php               # Travel packages list
-├── purchase.php               # Package booking handler
-├── register.php               # User registration page
-└── s.css                      # Custom stylesheet
+├── index.php                      # Homepage
+├── login.php                      # User login
+├── logout.php                     # Logout handler
+├── packages.php                   # Tour packages
+├── purchase.php                   # Package purchase handler
+├── register.php                   # User registration
+└── s.css                          # Custom stylesheet
+```
 
-🛠️ Technologies Used
+---
 
-* **Language:** PHP, HTML5, CSS3, JavaScript
-* **Database:** MySQL / MariaDB
-* **Server Environment:** Apache (XAMPP / WAMP)
-* **Version Control:** Git & GitHub
+## 🛠️ Technologies Used
 
-🔄 Application Workflow
+| Technology          | Purpose                                   |
+| ------------------- | ----------------------------------------- |
+| **PHP**             | Backend development and application logic |
+| **HTML5**           | Page structure                            |
+| **CSS3**            | Styling and layout                        |
+| **JavaScript**      | Client-side functionality                 |
+| **MySQL / MariaDB** | Database management                       |
+| **Apache**          | Local web server                          |
+| **XAMPP / WAMP**    | Local development environment             |
+| **Git & GitHub**    | Version control                           |
 
-                  ┌───────────────────┐
-                  │      Register     │
-                  └─────────┬─────────┘
-                            │
-                            ▼
-                  ┌───────────────────┐
-                  │       Login       │
-                  └─────────┬─────────┘
-                            │
-                            ▼
-                  ┌───────────────────┐
-                  │     Home Page     │
-                  └─────────┬─────────┘
-                            │
-               ┌────────────┴────────────┐
-               │                         │
-               ▼                         ▼
-       ┌───────────────┐        ┌────────────────┐
-       │Browse Packages│        │ Admin Panel    │
-       └───────┬───────┘        └───────┬────────┘
-               │                        │
-               ▼                        ▼
-       ┌───────────────┐        ┌────────────────┐
-       │Purchase Package│       │Manage Packages │
-       └───────┬───────┘        │ & Payments     │
-               │                        └────────────────┘
-               ▼
-       ┌───────────────┐
-       │Payment Record │
-       └───────────────┘
+---
 
-🚀 Getting Started
+## 🔄 Application Workflow
 
-Prerequisites
-* XAMPP (or any local Apache + MySQL web server)
-* PHP 7.4+ or 8.+
-* Web browser
+```text
+                    ┌───────────────────┐
+                    │     Register      │
+                    └─────────┬─────────┘
+                              │
+                              ▼
+                    ┌───────────────────┐
+                    │       Login       │
+                    └─────────┬─────────┘
+                              │
+                              ▼
+                    ┌───────────────────┐
+                    │     Home Page     │
+                    └─────────┬─────────┘
+                              │
+                ┌─────────────┴─────────────┐
+                │                           │
+                ▼                           ▼
+       ┌─────────────────┐        ┌─────────────────┐
+       │ Browse Packages │        │   Admin Panel   │
+       └────────┬────────┘        └────────┬────────┘
+                │                          │
+                ▼                          ▼
+       ┌─────────────────┐        ┌─────────────────┐
+       │ Purchase Package│        │ Manage Packages │
+       └────────┬────────┘        │ & Users         │
+                │                 │                 │
+                ▼                 │ Payment History │
+       ┌─────────────────┐        └─────────────────┘
+       │ Payment Record  │
+       └─────────────────┘
+```
 
-1. Clone the Repository
+---
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+Make sure the following are installed:
+
+* **XAMPP** or another local Apache + MySQL environment
+* **PHP 7.4+** or PHP 8.x
+* A modern web browser
+* **Git** (optional, for cloning the repository)
+
+### 1. Clone the Repository
+
+```bash
 git clone https://github.com/Iftekharul756/Tourist_Management_System_DBMS.git
+```
 
-2. Move to Local Server Directory
-Copy the project folder into your web server's root directory:
-C:\xampp\htdocs\Tourist-Management-System-main\
+### 2. Move the Project to the Server Directory
 
-3. Start Apache & MySQL
-Launch XAMPP Control Panel and click "Start" for Apache and MySQL.
+Copy the project folder into your local web server's root directory.
 
-4. Setup Database
-1. Open phpMyAdmin in your browser: http://localhost/phpmyadmin/
-2. Create a database named `tourist_management`.
-3. Click Import, choose `sql/database.sql` from the project folder, and click Go.
+For XAMPP:
 
-5. Verify Database Connection
-Check `includes/db.php` to ensure settings match your MySQL configuration:
+```text
+C:\xampp\htdocs\Tourist-Management-System-main
+```
+
+### 3. Start Apache and MySQL
+
+Open the **XAMPP Control Panel** and start:
+
+* Apache
+* MySQL
+
+### 4. Set Up the Database
+
+Open phpMyAdmin:
+
+```text
+http://localhost/phpmyadmin/
+```
+
+Create a new database named:
+
+```text
+tourist_management
+```
+
+Then:
+
+1. Select the `tourist_management` database.
+2. Open the **Import** tab.
+3. Select `sql/database.sql` from the project.
+4. Click **Go** to import the database.
+
+### 5. Verify the Database Connection
+
+Open:
+
+```text
+includes/db.php
+```
+
+Make sure the database configuration matches your local MySQL setup:
+
+```php
 $servername = "localhost";
 $username = "root";
 $password = "";
 $dbname = "tourist_management";
+```
 
-6. Run the Application
-Open your web browser and visit:
+> If your MySQL installation uses a different username, password, or port, update the configuration accordingly.
+
+### 6. Run the Application
+
+Open your browser and visit:
+
+```text
 http://localhost/Tourist-Management-System-main/index.php
+```
 
-🔐 User Roles
+The application should now be running locally.
 
-Customer / User
-* Register and log in
-* Browse tour packages
-* Purchase packages
-* View booking records
+---
 
-Administrator
-* Access the admin panel (`/admin/dashboard.php`)
-* Add, edit, and delete packages
-* Manage user accounts
+## 🔐 User Roles
+
+### Customer / User
+
+Users can:
+
+* Create an account
+* Log in and log out
+* Browse available tour packages
+* Purchase tour packages
+* Access booking/account information
+
+### Administrator
+
+Administrators can:
+
+* Access the admin dashboard
+* Add, edit, and delete tour packages
+* Manage registered users
 * View payment histories
 
-📚 Key Concepts Demonstrated
+Admin panel:
 
-* Full-stack PHP & MySQL development
-* Relational Database Management Systems (DBMS)
-* Session-based user authentication & authorization
-* CRUD (Create, Read, Update, Delete) operations
-* Form validation & database script integration
-* Git & GitHub version control
+```text
+/admin/dashboard.php
+```
 
-👨‍💻 Author
+---
 
-Md Iftekharul Alam
+## 📚 Key Concepts Demonstrated
+
+This project demonstrates several practical concepts in web development and database management:
+
+* PHP-based web application development
+* MySQL relational database management
+* Database-driven application design
+* Session-based authentication
+* User authorization and role management
+* CRUD operations
+* Form handling and validation
+* PHP–MySQL database integration
+* Git and GitHub version control
+
+---
+
+## 👨‍💻 Author
+
+**Md Iftekharul Alam**
 B.Sc. in Computer Science & Engineering
-Interested in Artificial Intelligence, Machine Learning, Data, and Software Development.
 
-⭐ Support
+Interested in **Artificial Intelligence, Machine Learning, Data, and Software Development**.
 
-If you find this project helpful, consider giving the repository a ⭐!
+---
+
+## ⭐ Support
+
+If you find this project useful or interesting, consider giving the repository a ⭐ on GitHub.
